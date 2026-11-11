@@ -2,1163 +2,297 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Swift EV Mobility | Hyderabad Scooter Rentals</title>
-    <meta
-      name="description"
-      content="Affordable weekly and monthly EV scooter rentals in Hyderabad. Fast pickup, easy booking, and trusted rides for daily commuting and weekend adventures."
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5fbff" />
+    <title>Swift EV Mobility Solutions | EV Scooter Rentals in Hyderabad</title>
+    <meta name="description" content="Rent an electric scooter or explore home charging with Swift EV Mobility Solutions in Hyderabad. Contact us by phone or WhatsApp for availability and rental pricing." />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
     <style>
       :root {
-        --bg: #f5faf8;
-        --bg-dark: #0e1d1a;
-        --card: rgba(255, 255, 255, 0.8);
-        --card-strong: #ffffff;
-        --primary: #1eb980;
-        --primary-deep: #0d8d5d;
-        --accent: #dffaf0;
-        --text: #15352d;
-        --muted: #5b6f69;
-        --line: rgba(21, 53, 45, 0.08);
-        --shadow: 0 24px 60px rgba(15, 37, 32, 0.12);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(180deg, #f6fcfa 0%, #edf8f3 100%);
-        color: var(--text);
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
-      }
-
-      .container {
-        width: min(1120px, calc(100% - 32px));
-        margin: 0 auto;
-      }
-
-      .section {
-        padding: 100px 0;
-      }
-
-      .eyebrow {
-        display: inline-block;
-        padding: 8px 14px;
-        border-radius: 999px;
-        background: rgba(30, 185, 128, 0.12);
-        color: var(--primary-deep);
-        font-weight: 700;
-        font-size: 0.8rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .header {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        backdrop-filter: blur(16px);
-        background: rgba(246, 252, 250, 0.72);
-        border-bottom: 1px solid var(--line);
-      }
-
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 74px;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-weight: 800;
-        font-size: 1.15rem;
-      }
-
-      .brand-mark {
-        width: 38px;
-        height: 38px;
-        border-radius: 12px;
-        display: grid;
-        place-items: center;
-        background: linear-gradient(135deg, var(--primary), #86f0c8);
-        color: white;
-        font-size: 1.2rem;
-        box-shadow: 0 10px 24px rgba(30, 185, 128, 0.35);
-      }
-
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 28px;
-        color: var(--muted);
-        font-weight: 600;
-      }
-
-      .nav-links a:hover {
-        color: var(--text);
-      }
-
-      .nav-cta {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 12px 20px;
-        border-radius: 999px;
-        border: none;
-        background: var(--primary);
-        color: #fff;
-        font-weight: 700;
-        box-shadow: 0 16px 30px rgba(30, 185, 128, 0.22);
-        transition: transform 0.25s ease;
-      }
-
-      .nav-cta:hover {
-        transform: translateY(-2px);
-      }
-
-      .hero {
-        padding: 80px 0 56px;
-      }
-
-      .hero-wrap {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        align-items: center;
-        gap: 50px;
-      }
-
-      .hero-copy h1 {
-        font-size: clamp(2.5rem, 5vw, 5rem);
-        line-height: 1.05;
-        margin: 18px 0 18px;
-        letter-spacing: -0.05em;
-      }
-
-      .hero-copy p {
-        color: var(--muted);
-        font-size: 1.1rem;
-        line-height: 1.7;
-        max-width: 610px;
-      }
-
-      .cta-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        margin-top: 30px;
-      }
-
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 16px 26px;
-        border-radius: 999px;
-        font-weight: 700;
-        border: 1px solid transparent;
-        transition: all 0.25s ease;
-      }
-
-      .button.primary {
-        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-deep) 100%);
-        color: #fff;
-        box-shadow: 0 18px 36px rgba(30, 185, 128, 0.24);
-      }
-
-      .button.secondary {
-        background: rgba(255, 255, 255, 0.6);
-        color: var(--text);
-        border-color: rgba(21, 53, 45, 0.12);
-      }
-
-      .button:hover {
-        transform: translateY(-2px);
-      }
-
-      .hero-stats {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 24px;
-        margin-top: 36px;
-      }
-
-      .stat-box {
-        min-width: 150px;
-      }
-
-      .stat-box strong {
-        display: block;
-        font-size: 1.5rem;
-        margin-bottom: 4px;
-      }
-
-      .stat-box span {
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-
-      .hero-visual {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .visual-shell {
-        width: min(500px, 100%);
-        position: relative;
-        padding: 22px;
-        border-radius: 28px;
-        background: linear-gradient(180deg, rgba(255,255,255,0.5), rgba(202, 244, 228, 0.9));
-        border: 1px solid rgba(21, 53, 45, 0.08);
-        box-shadow: var(--shadow);
-        animation: float 6s ease-in-out infinite;
-      }
-
-      .scooter-card {
-        background: linear-gradient(135deg, #ffffff 0%, #ebfff5 100%);
-        border-radius: 24px;
-        padding: 24px;
-        position: relative;
-        overflow: hidden;
-        border: 1px solid rgba(15, 37, 32, 0.06);
-      }
-
-      .scooter-card::before {
-        content: "";
-        position: absolute;
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
-        background: rgba(30, 185, 128, 0.08);
-        right: -60px;
-        top: -60px;
-      }
-
-      .mini-badges {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        position: relative;
-        z-index: 1;
-      }
-
-      .badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.8);
-        border: 1px solid rgba(21, 53, 45, 0.06);
-        font-weight: 700;
-        font-size: 0.82rem;
-      }
-
-      .scooter-illustration {
-        position: relative;
-        z-index: 1;
-        margin: 26px 0 18px;
-        height: 220px;
-      }
-
-      .bike {
-        position: absolute;
-        left: 50%;
-        bottom: 18px;
-        transform: translateX(-50%);
-        width: 330px;
-        height: 190px;
-      }
-
-      .bike .body {
-        position: absolute;
-        left: 20px;
-        right: 36px;
-        bottom: 50px;
-        height: 32px;
-        background: linear-gradient(90deg, #1d2d2a, #1eb980);
-        border-radius: 16px 60px 24px 16px;
-        box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.1);
-      }
-
-      .bike .seat {
-        position: absolute;
-        left: 92px;
-        bottom: 94px;
-        width: 110px;
-        height: 18px;
-        background: #1d2d2a;
-        border-radius: 10px;
-      }
-
-      .bike .front {
-        position: absolute;
-        right: 0;
-        bottom: 46px;
-        width: 92px;
-        height: 58px;
-        border: 9px solid #1d2d2a;
-        border-left: none;
-        border-radius: 0 45px 38px 0;
-        background: rgba(30, 185, 128, 0.08);
-      }
-
-      .bike .stem {
-        position: absolute;
-        left: 154px;
-        bottom: 86px;
-        width: 80px;
-        height: 12px;
-        background: #1d2d2a;
-        border-radius: 12px;
-        transform: rotate(-28deg);
-      }
-
-      .bike .handle {
-        position: absolute;
-        left: 150px;
-        bottom: 120px;
-        width: 52px;
-        height: 14px;
-        border: 8px solid #1d2d2a;
-        border-bottom: none;
-        border-radius: 18px 18px 0 0;
-      }
-
-      .bike .wheel {
-        position: absolute;
-        bottom: 0;
-        width: 96px;
-        height: 96px;
-        border-radius: 50%;
-        border: 11px solid #1d2d2a;
-        background: rgba(255, 255, 255, 0.55);
-      }
-
-      .bike .wheel.left { left: 36px; }
-      .bike .wheel.right { right: 18px; }
-
-      .bike .wheel::before {
-        content: "";
-        position: absolute;
-        inset: 21px;
-        border-radius: 50%;
-        border: 5px solid rgba(21, 53, 45, 0.18);
-      }
-
-      .price-tag {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 16px 18px;
-        background: rgba(13, 141, 93, 0.08);
-        border-radius: 18px;
-        border: 1px solid rgba(13, 141, 93, 0.12);
-      }
-
-      .price-tag strong {
-        font-size: 1.8rem;
-      }
-
-      .price-tag span {
-        color: var(--muted);
-        font-weight: 600;
-      }
-
-      .section-head {
-        text-align: center;
-        max-width: 720px;
-        margin: 0 auto 40px;
-      }
-
-      .section-head h2 {
-        font-size: clamp(2rem, 4vw, 3.2rem);
-        line-height: 1.1;
-        margin: 16px 0 12px;
-        letter-spacing: -0.05em;
-      }
-
-      .section-head p {
-        color: var(--muted);
-        line-height: 1.8;
-        font-size: 1.05rem;
-      }
-
-      .features-grid,
-      .plans-grid,
-      .testimonials-grid,
-      .faq-grid {
-        display: grid;
-        gap: 24px;
-      }
-
-      .features-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .feature-card,
-      .plan-card,
-      .testimonial,
-      .faq-item,
-      .about-box {
-        background: rgba(255, 255, 255, 0.72);
-        border: 1px solid var(--line);
-        border-radius: 28px;
-        box-shadow: 0 18px 40px rgba(17, 39, 33, 0.06);
-      }
-
-      .feature-card {
-        padding: 32px 24px;
-      }
-
-      .feature-icon {
-        width: 58px;
-        height: 58px;
-        border-radius: 18px;
-        display: grid;
-        place-items: center;
-        margin-bottom: 16px;
-        font-size: 1.6rem;
-        background: linear-gradient(135deg, rgba(30, 185, 128, 0.14), rgba(30, 185, 128, 0.04));
-      }
-
-      .feature-card h3 {
-        margin: 0 0 8px;
-        font-size: 1.35rem;
-      }
-
-      .feature-card p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.7;
-      }
-
-      .plans-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .plan-card {
-        position: relative;
-        padding: 30px 22px;
-        overflow: hidden;
-      }
-
-      .plan-card.popular {
-        background: linear-gradient(180deg, rgba(30, 185, 128, 0.1), rgba(255,255,255,0.8));
-        border-color: rgba(30, 185, 128, 0.2);
-        transform: translateY(-8px);
-      }
-
-      .plan-card .tag {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background: rgba(255,255,255,0.9);
-        border: 1px solid rgba(21, 53, 45, 0.06);
-        color: var(--primary-deep);
-        font-weight: 800;
-        font-size: 0.7rem;
-        padding: 8px 10px;
-        border-radius: 999px;
-      }
-
-      .plan-card h3 {
-        margin: 0 0 10px;
-        font-size: 1.5rem;
-      }
-
-      .price {
-        display: flex;
-        align-items: end;
-        gap: 8px;
-        margin: 18px 0 20px;
-      }
-
-      .price strong {
-        font-size: 2.6rem;
-        letter-spacing: -0.06em;
-      }
-
-      .price span {
-        color: var(--muted);
-        font-weight: 600;
-        margin-bottom: 8px;
-      }
-
-      .plan-card ul {
-        list-style: none;
-        padding: 0;
-        margin: 18px 0 0;
-        display: grid;
-        gap: 12px;
-      }
-
-      .plan-card li {
-        color: var(--muted);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .plan-card li::before {
-        content: "✓";
-        display: inline-grid;
-        place-items: center;
-        width: 22px;
-        height: 22px;
-        border-radius: 50%;
-        background: rgba(30, 185, 128, 0.12);
-        color: var(--primary-deep);
-        font-weight: 800;
-      }
-
-      .button.full {
-        width: 100%;
-        margin-top: 22px;
-      }
-
-      .testimonials-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .testimonial {
-        padding: 26px 22px;
-      }
-
-      .stars {
-        color: #f7b500;
-        letter-spacing: 0.15em;
-        margin-bottom: 18px;
-      }
-
-      .testimonial p {
-        margin: 0 0 18px;
-        color: var(--muted);
-        line-height: 1.8;
-      }
-
-      .rider {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .avatar {
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        background: linear-gradient(135deg, rgba(30,185,128,0.18), rgba(17,39,33,0.06));
-        font-weight: 800;
-        color: var(--primary-deep);
-      }
-
-      .rider strong {
-        display: block;
-      }
-
-      .rider span {
-        color: var(--muted);
-        font-size: 0.86rem;
-      }
-
-      .faq-grid {
-        grid-template-columns: 1.1fr 0.9fr;
-        align-items: start;
-      }
-
-      .faq-list {
-        display: grid;
-        gap: 18px;
-      }
-
-      .faq-item {
-        overflow: hidden;
-      }
-
-      .faq-question {
-        width: 100%;
-        background: transparent;
-        border: none;
-        color: var(--text);
-        text-align: left;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 14px;
-        padding: 22px 24px;
-        font: inherit;
-        font-weight: 700;
-        cursor: pointer;
-      }
-
-      .faq-answer {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.28s ease;
-      }
-
-      .faq-answer p {
-        margin: 0;
-        padding: 0 24px 22px;
-        color: var(--muted);
-        line-height: 1.75;
-      }
-
-      .faq-question .plus {
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        background: rgba(30, 185, 128, 0.1);
-        color: var(--primary-deep);
-        font-size: 1.2rem;
-        flex-shrink: 0;
-      }
-
-      .faq-item.active .faq-answer {
-        max-height: 200px;
-      }
-
-      .faq-item.active .faq-question .plus {
-        transform: rotate(45deg);
-      }
-
-      .about-wrap {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 28px;
-      }
-
-      .about-box {
-        padding: 32px 28px;
-      }
-
-      .about-box h3 {
-        font-size: 1.7rem;
-        margin: 0 0 10px;
-      }
-
-      .about-box p {
-        color: var(--muted);
-        line-height: 1.8;
-        margin: 0 0 18px;
-      }
-
-      .check-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: grid;
-        gap: 12px;
-      }
-
-      .check-list li {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: var(--text);
-        font-weight: 600;
-      }
-
-      .check-list li::before {
-        content: "•";
-        color: var(--primary-deep);
-        font-size: 1.7rem;
-        line-height: 1;
-      }
-
-      .cta-panel {
-        margin-top: 54px;
-        padding: 34px 28px;
-        border-radius: 30px;
-        background: linear-gradient(135deg, var(--bg-dark), #183b35);
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-      }
-
-      .cta-panel h3 {
-        margin: 0 0 6px;
-        font-size: clamp(1.7rem, 2vw, 2.5rem);
-      }
-
-      .cta-panel p {
-        margin: 0;
-        color: rgba(255, 255, 255, 0.75);
-      }
-
-      .footer {
-        background: #0e1d1a;
-        color: rgba(255,255,255,0.8);
-        padding: 26px 0 34px;
-      }
-
-      .footer-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-        flex-wrap: wrap;
-      }
-
-      .footer-links {
-        display: flex;
-        gap: 18px;
-        flex-wrap: wrap;
-      }
-
-      .reveal {
-        opacity: 0;
-        transform: translateY(22px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-      }
-
-      .reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-12px); }
-      }
-
-      @media (max-width: 900px) {
-        .hero-wrap,
-        .faq-grid,
-        .about-wrap,
-        .features-grid,
-        .plans-grid,
-        .testimonials-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .nav-links {
-          display: none;
-        }
-
-        .header .nav-cta {
-          display: none;
-        }
-
-        .section {
-          padding: 80px 0;
-        }
-
-        .cta-panel {
-          flex-direction: column;
-          text-align: center;
-        }
-      }
-
-      @media (max-width: 560px) {
-        .hero {
-          padding-top: 60px;
-        }
-
-        .hero-copy h1 {
-          letter-spacing: -0.04em;
-        }
-
-        .button {
-          width: 100%;
-        }
-
-        .cta-row {
-          flex-direction: column;
-        }
+        --ink: #122b43;
+        --muted: #607387;
+        --blue: #258de0;
+        --blue-dark: #1473c2;
+        --sky: #eaf6ff;
+        --line: #dfebf4;
+        --white: #fff;
+        --shadow: 0 24px 70px rgba(27, 86, 130, .12);
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+      body { margin: 0; color: var(--ink); background: #fff; font-family: "DM Sans", sans-serif; line-height: 1.65; }
+      a { color: inherit; text-decoration: none; }
+      button { font: inherit; }
+      img { max-width: 100%; display: block; }
+      .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+      .section { padding: 100px 0; }
+      .section-tint { background: linear-gradient(180deg, #f7fbff, #eff8ff); }
+      .topbar { background: #102b46; color: #eaf6ff; font-size: .88rem; }
+      .topbar-inner { display:flex; justify-content:space-between; gap:16px; padding: 9px 0; }
+      .topbar a { color:#fff; font-weight:700; }
+      .header { position: sticky; top:0; z-index:20; background:rgba(255,255,255,.92); backdrop-filter: blur(16px); border-bottom:1px solid rgba(18,43,67,.08); }
+      .nav { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+      .brand { display:flex; align-items:center; gap:11px; font:800 1.05rem Manrope,sans-serif; letter-spacing:-.03em; }
+      .brand-mark { width:42px; height:42px; display:grid; place-items:center; color:#fff; background:linear-gradient(145deg,#57b8ff,#1473c2); border-radius:14px; box-shadow:0 10px 24px rgba(37,141,224,.25); }
+      .brand small { display:block; font:600 .65rem "DM Sans",sans-serif; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; }
+      .nav-links { display:flex; align-items:center; gap:27px; color:#496176; font-size:.92rem; font-weight:700; }
+      .nav-links a:hover { color:var(--blue-dark); }
+      .button { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:48px; padding:12px 21px; border:1px solid transparent; border-radius:999px; font-weight:700; transition:transform .2s ease, box-shadow .2s ease, background .2s ease; cursor:pointer; }
+      .button:hover { transform:translateY(-2px); }
+      .button-primary { background:var(--blue); color:#fff; box-shadow:0 12px 28px rgba(37,141,224,.23); }
+      .button-primary:hover { background:var(--blue-dark); }
+      .button-light { background:#fff; color:var(--ink); border-color:var(--line); }
+      .button-whatsapp { background:#18a967; color:#fff; box-shadow:0 12px 28px rgba(24,169,103,.2); }
+      .menu-toggle { display:none; border:1px solid var(--line); border-radius:12px; background:#fff; color:var(--ink); width:44px; height:44px; font-size:1.35rem; }
+      .hero { overflow:hidden; padding:68px 0 82px; background:radial-gradient(ellipse at 80% 20%, #dff2ff 0, transparent 38%), linear-gradient(180deg,#f7fbff,#fff); }
+      .hero-grid { display:grid; grid-template-columns:1.02fr .98fr; align-items:center; gap:52px; }
+      .eyebrow { display:inline-flex; align-items:center; gap:9px; color:var(--blue-dark); font-size:.77rem; text-transform:uppercase; letter-spacing:.14em; font-weight:800; }
+      .eyebrow::before { content:""; width:24px; height:2px; background:currentColor; }
+      h1,h2,h3 { font-family:Manrope,sans-serif; letter-spacing:-.045em; }
+      h1 { margin:16px 0 20px; max-width:680px; font-size:clamp(2.8rem,5.5vw,5.15rem); line-height:1.02; }
+      h1 span { color:var(--blue); }
+      .hero-copy > p { max-width:590px; color:var(--muted); font-size:1.1rem; }
+      .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin:29px 0 28px; }
+      .hero-note { display:flex; align-items:center; gap:10px; color:#577186; font-size:.92rem; }
+      .hero-note span { display:grid; place-items:center; flex:0 0 28px; height:28px; border-radius:50%; color:var(--blue-dark); background:#e4f3ff; font-weight:800; }
+      .hero-photo { position:relative; min-height:490px; }
+      .hero-photo img { width:100%; height:490px; object-fit:cover; border-radius:34px; box-shadow:var(--shadow); }
+      .photo-label { position:absolute; left:-25px; bottom:28px; max-width:250px; padding:18px 20px; border:1px solid rgba(255,255,255,.8); border-radius:18px; background:rgba(255,255,255,.93); box-shadow:0 18px 46px rgba(25,75,111,.15); }
+      .photo-label strong { display:block; font:800 1rem Manrope,sans-serif; }
+      .photo-label span { color:var(--muted); font-size:.85rem; }
+      .section-heading { max-width:700px; margin:0 auto 46px; text-align:center; }
+      .section-heading h2 { margin:12px 0; font-size:clamp(2rem,4vw,3.35rem); line-height:1.12; }
+      .section-heading p { margin:0; color:var(--muted); }
+      .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:54px; align-items:center; }
+      .about-image { position:relative; }
+      .about-image img { width:100%; height:430px; object-fit:cover; border-radius:28px; box-shadow:var(--shadow); }
+      .about-copy h2 { margin:14px 0; font-size:clamp(2rem,4vw,3.1rem); line-height:1.13; }
+      .about-copy p { color:var(--muted); }
+      .simple-list { list-style:none; padding:0; display:grid; gap:12px; margin:24px 0 0; }
+      .simple-list li { display:flex; align-items:flex-start; gap:12px; font-weight:700; }
+      .simple-list li::before { content:"✓"; flex:0 0 24px; height:24px; display:grid; place-items:center; border-radius:50%; color:var(--blue-dark); background:#e4f3ff; font-size:.8rem; }
+      .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+      .card { padding:28px; border:1px solid var(--line); border-radius:24px; background:#fff; box-shadow:0 14px 38px rgba(25,75,111,.06); transition:transform .25s ease, box-shadow .25s ease; }
+      .card:hover { transform:translateY(-6px); box-shadow:var(--shadow); }
+      .icon { width:54px; height:54px; display:grid; place-items:center; margin-bottom:18px; border-radius:17px; background:#e8f5ff; font-size:1.45rem; }
+      .card h3 { margin:0 0 9px; font-size:1.28rem; }
+      .card p { margin:0; color:var(--muted); }
+      .plan-card { position:relative; padding:30px; border:1px solid var(--line); border-radius:26px; background:#fff; box-shadow:0 14px 38px rgba(25,75,111,.06); }
+      .plan-card.featured { border:2px solid #78c5ff; box-shadow:0 20px 50px rgba(37,141,224,.12); }
+      .plan-card h3 { margin:0; font-size:1.45rem; }
+      .plan-card p { color:var(--muted); }
+      .price-placeholder { padding:15px 16px; border-radius:15px; background:#f0f8ff; color:var(--blue-dark); font-weight:800; }
+      .price-placeholder small { display:block; color:var(--muted); font-weight:500; }
+      .plan-card .simple-list { gap:10px; margin:22px 0; }
+      .plan-card .button { width:100%; }
+      .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; counter-reset:step; }
+      .step { padding:26px 24px; border-radius:22px; background:#fff; border:1px solid var(--line); counter-increment:step; }
+      .step-number { width:44px; height:44px; margin-bottom:18px; display:grid; place-items:center; border-radius:50%; color:#fff; background:var(--blue); font:800 1rem Manrope,sans-serif; }
+      .step h3 { margin:0 0 8px; font-size:1.2rem; }
+      .step p { margin:0; color:var(--muted); }
+      .faq-layout { display:grid; grid-template-columns:.75fr 1.25fr; gap:56px; align-items:start; }
+      .faq-intro h2 { margin:12px 0; font-size:clamp(2rem,4vw,3rem); line-height:1.1; }
+      .faq-intro p { color:var(--muted); }
+      .faq-list { display:grid; gap:12px; }
+      .faq-item { overflow:hidden; border:1px solid var(--line); border-radius:17px; background:#fff; }
+      .faq-question { width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:19px 21px; text-align:left; color:var(--ink); border:0; background:transparent; font-weight:700; cursor:pointer; }
+      .faq-question span:last-child { color:var(--blue); font-size:1.35rem; transition:transform .2s ease; }
+      .faq-answer { display:grid; grid-template-rows:0fr; transition:grid-template-rows .25s ease; }
+      .faq-answer > div { overflow:hidden; }
+      .faq-answer p { margin:0; padding:0 21px 19px; color:var(--muted); }
+      .faq-item.active .faq-answer { grid-template-rows:1fr; }
+      .faq-item.active .faq-question span:last-child { transform:rotate(45deg); }
+      .contact-panel { display:grid; grid-template-columns:1fr .95fr; gap:30px; padding:38px; border-radius:30px; background:linear-gradient(135deg,#102c48,#1d5e91); color:#fff; box-shadow:var(--shadow); }
+      .contact-panel h2 { margin:12px 0; font-size:clamp(2rem,4vw,3.1rem); line-height:1.12; }
+      .contact-panel p { color:rgba(255,255,255,.78); }
+      .contact-details { display:grid; gap:13px; align-content:center; }
+      .contact-row { display:flex; gap:13px; align-items:flex-start; padding:16px; border:1px solid rgba(255,255,255,.16); border-radius:16px; background:rgba(255,255,255,.08); }
+      .contact-row .contact-icon { font-size:1.15rem; }
+      .contact-row strong { display:block; }
+      .contact-row span,.contact-row a { color:rgba(255,255,255,.82); }
+      .contact-actions { display:flex; flex-wrap:wrap; gap:11px; margin-top:22px; }
+      .contact-panel .button-light { border:0; }
+      .footer { padding:27px 0; color:#d5e6f4; background:#0b2035; }
+      .footer-inner { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px; }
+      .footer p { margin:0; font-size:.9rem; }
+      .footer-links { display:flex; gap:19px; font-size:.9rem; }
+      .floating-whatsapp { position:fixed; z-index:15; right:22px; bottom:22px; width:58px; height:58px; display:grid; place-items:center; border-radius:50%; background:#18a967; color:#fff; font-size:1.55rem; box-shadow:0 12px 30px rgba(24,169,103,.35); transition:transform .2s ease; }
+      .floating-whatsapp:hover { transform:translateY(-4px) scale(1.03); }
+      .reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
+      .reveal.visible { opacity:1; transform:none; }
+      @media (max-width:900px) {
+        .hero-grid,.about-grid,.faq-layout,.contact-panel { grid-template-columns:1fr; }
+        .hero-grid { gap:34px; }
+        .hero-photo { min-height:380px; }
+        .hero-photo img { height:380px; }
+        .cards,.steps { grid-template-columns:repeat(2,1fr); }
+        .nav-links { display:none; position:absolute; left:20px; right:20px; top:70px; padding:18px; flex-direction:column; align-items:stretch; gap:4px; background:#fff; border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow); }
+        .nav-links.open { display:flex; }
+        .nav-links a { padding:10px; }
+        .menu-toggle { display:block; }
+        .nav > .button { display:none; }
+      }
+      @media (max-width:600px) {
+        .container { width:min(100% - 30px,1160px); }
+        .section { padding:72px 0; }
+        .topbar-inner { justify-content:center; text-align:center; }
+        .topbar-inner span:first-child { display:none; }
+        .hero { padding:48px 0 65px; }
+        h1 { font-size:clamp(2.55rem,13vw,4rem); }
+        .hero-photo,.hero-photo img { min-height:320px; height:320px; }
+        .photo-label { left:12px; bottom:12px; }
+        .cards,.steps { grid-template-columns:1fr; }
+        .contact-panel { padding:26px 20px; }
+        .contact-actions .button { flex:1 1 100%; }
+        .footer-inner { align-items:flex-start; flex-direction:column; }
+        .floating-whatsapp { right:15px; bottom:15px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,*::before,*::after { scroll-behavior:auto !important; animation-duration:.01ms !important; transition-duration:.01ms !important; }
+        .reveal { opacity:1; transform:none; }
       }
     </style>
   </head>
   <body>
+    <div class="topbar"><div class="container topbar-inner"><span>Hyderabad, Telangana</span><span>Talk to us: <a href="tel:+919030811105">+91 90308 11105</a></span></div></div>
     <header class="header">
       <div class="container nav">
-        <a href="#home" class="brand" aria-label="Swift EV home">
-          <span class="brand-mark">⚡</span>
-          <span>Swift EV</span>
-        </a>
-
-        <nav class="nav-links" aria-label="Main navigation">
-          <a href="#plans">Plans</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="#faq">FAQ</a>
-          <a href="#about">About</a>
+        <a class="brand" href="#home" aria-label="Swift EV Mobility Solutions home"><span class="brand-mark" aria-hidden="true">⚡</span><span>Swift EV<small>Mobility Solutions</small></span></a>
+        <nav class="nav-links" id="site-navigation" aria-label="Main navigation">
+          <a href="#about">About</a><a href="#services">Services</a><a href="#plans">Rental plans</a><a href="#how-it-works">How it works</a><a href="#faq">FAQs</a><a href="#contact">Contact</a>
         </nav>
-
-        <a href="#contact" class="nav-cta">Book a Ride</a>
+        <a class="button button-primary" href="https://wa.me/919030811105?text=Hi%20Swift%20EV%2C%20I%27d%20like%20to%20ask%20about%20booking%20an%20electric%20scooter." target="_blank" rel="noopener noreferrer">Book Now <span aria-hidden="true">↗</span></a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">☰</button>
       </div>
     </header>
 
-    <main id="home">
-      <section class="hero">
-        <div class="container hero-wrap">
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <span class="eyebrow">Hyderabad’s smart mobility</span>
-            <h1>Ride electric. Save more. Move smarter.</h1>
-            <p>
-              Flexible weekly and monthly EV scooter rentals in Hyderabad for students,
-              professionals, and weekend explorers. Easy onboarding, affordable rates,
-              and reliable support whenever you need it.
-            </p>
-
-            <div class="cta-row">
-              <a class="button primary" href="#plans">Explore Plans</a>
-              <a class="button secondary" href="#about">Why Swift EV</a>
+            <span class="eyebrow">A smarter way around Hyderabad</span>
+            <h1>Move freely.<br /><span>Choose electric.</span></h1>
+            <p>Discover convenient electric scooter rentals and home charging solutions from Swift EV Mobility Solutions. Simple, flexible mobility for everyday life in Hyderabad.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="https://wa.me/919030811105?text=Hi%20Swift%20EV%2C%20I%27d%20like%20to%20book%20an%20electric%20scooter%20in%20Hyderabad." target="_blank" rel="noopener noreferrer">Book on WhatsApp <span aria-hidden="true">↗</span></a>
+              <a class="button button-light" href="#services">Explore services</a>
             </div>
-
-            <div class="hero-stats">
-              <div class="stat-box">
-                <strong>500+</strong>
-                <span>Happy riders</span>
-              </div>
-              <div class="stat-box">
-                <strong>24/7</strong>
-                <span>Support</span>
-              </div>
-              <div class="stat-box">
-                <strong>₹2,499</strong>
-                <span>Weekly rental</span>
-              </div>
-            </div>
+            <div class="hero-note"><span>✓</span> Weekly and monthly rental enquiries welcome</div>
           </div>
-
-          <div class="hero-visual reveal" aria-label="Stylized electric scooter illustration">
-            <div class="visual-shell">
-              <div class="scooter-card">
-                <div class="mini-badges">
-                  <span class="badge">⚡ Fast Pickup</span>
-                  <span class="badge">Eco Ride</span>
-                </div>
-
-                <div class="scooter-illustration">
-                  <div class="bike" aria-hidden="true">
-                    <div class="front"></div>
-                    <div class="stem"></div>
-                    <div class="handle"></div>
-                    <div class="seat"></div>
-                    <div class="body"></div>
-                    <div class="wheel left"></div>
-                    <div class="wheel right"></div>
-                  </div>
-                </div>
-
-                <div class="price-tag">
-                  <div>
-                    <span>From</span><br />
-                    <strong>₹2,499</strong>
-                  </div>
-                  <span>/ week</span>
-                </div>
-              </div>
-            </div>
+          <div class="hero-photo reveal">
+            <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Modern electric scooter ready for a city ride" fetchpriority="high" />
+            <div class="photo-label"><strong>Electric mobility, made easier</strong><span>Rentals and home charging in Hyderabad</span></div>
           </div>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" id="about">
+        <div class="container about-grid">
+          <div class="about-image reveal"><img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Electric two-wheeler for convenient everyday travel" loading="lazy" /></div>
+          <div class="about-copy reveal">
+            <span class="eyebrow">About Swift EV</span>
+            <h2>Local mobility with a lighter footprint.</h2>
+            <p>Swift EV Mobility Solutions helps Hyderabad residents explore electric mobility with scooter rental options and home charging support. Whether you need a ride for a week or a month, our team can help you understand availability, terms and the right next step.</p>
+            <ul class="simple-list"><li>Hyderabad-based service</li><li>Flexible weekly and monthly rental enquiries</li><li>Home charging solutions</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tint" id="services">
         <div class="container">
-          <div class="section-head reveal">
-            <span class="eyebrow">Why riders choose us</span>
-            <h2>Simple rentals that fit your lifestyle</h2>
-            <p>
-              Whether you need a scooter for the week or the month, Swift EV helps you move around Hyderabad
-              without the hassle of ownership or high running costs.
-            </p>
-          </div>
-
-          <div class="features-grid">
-            <article class="feature-card reveal">
-              <div class="feature-icon">🚀</div>
-              <h3>Fast setup</h3>
-              <p>Quick documentation, easy handover, and minimal waiting time before you hit the road.</p>
-            </article>
-
-            <article class="feature-card reveal">
-              <div class="feature-icon">🔋</div>
-              <h3>Battery-ready</h3>
-              <p>Well-maintained scooters with real-time charging support and smooth city performance.</p>
-            </article>
-
-            <article class="feature-card reveal">
-              <div class="feature-icon">💬</div>
-              <h3>Friendly support</h3>
-              <p>Get local assistance, roadside guidance, and service support whenever you need it.</p>
-            </article>
+          <div class="section-heading reveal"><span class="eyebrow">Our services</span><h2>Everyday EV support, in one place</h2><p>Choose an electric scooter rental or ask us about convenient home charging solutions.</p></div>
+          <div class="cards">
+            <article class="card reveal"><div class="icon" aria-hidden="true">🛵</div><h3>EV scooter rentals</h3><p>Ask about weekly and monthly rentals for commuting, errands and getting around Hyderabad.</p></article>
+            <article class="card reveal"><div class="icon" aria-hidden="true">🏠</div><h3>Home charging</h3><p>Explore home charging support for your EV. Contact us to discuss your vehicle and installation requirements.</p></article>
+            <article class="card reveal"><div class="icon" aria-hidden="true">💬</div><h3>Personal assistance</h3><p>Speak with our team by phone or WhatsApp about availability, rental terms, charging and next steps.</p></article>
           </div>
         </div>
       </section>
 
-      <section id="plans" class="section">
+      <section class="section" id="plans">
         <div class="container">
-          <div class="section-head reveal">
-            <span class="eyebrow">Rental plans</span>
-            <h2>Pick the plan that suits your commute</h2>
-            <p>Transparent pricing, flexible durations, and no long-term commitment.</p>
-          </div>
-
-          <div class="plans-grid">
-            <article class="plan-card reveal">
-              <div class="tag">Best for short trips</div>
-              <h3>Weekly Plan</h3>
-              <div class="price">
-                <strong>₹2,499</strong>
-                <span>/ week</span>
-              </div>
-              <ul>
-                <li>Unlimited city rides</li>
-                <li>Free basic maintenance</li>
-                <li>Pickup & drop support</li>
-                <li>Helmet included</li>
-              </ul>
-              <a href="#contact" class="button secondary full">Book weekly</a>
-            </article>
-
-            <article class="plan-card popular reveal">
-              <div class="tag">Most popular</div>
-              <h3>Monthly Plan</h3>
-              <div class="price">
-                <strong>₹8,999</strong>
-                <span>/ month</span>
-              </div>
-              <ul>
-                <li>Best value for daily commute</li>
-                <li>Priority support</li>
-                <li>Flexible renewal</li>
-                <li>Battery & service check</li>
-              </ul>
-              <a href="#contact" class="button primary full">Book monthly</a>
-            </article>
-
-            <article class="plan-card reveal">
-              <div class="tag">Custom</div>
-              <h3>Long Stay</h3>
-              <div class="price">
-                <strong>Custom</strong>
-                <span>pricing</span>
-              </div>
-              <ul>
-                <li>3+ month flexible terms</li>
-                <li>Corporate usage available</li>
-                <li>Tailored rider support</li>
-                <li>Priority vehicle allocation</li>
-              </ul>
-              <a href="#contact" class="button secondary full">Request quote</a>
-            </article>
+          <div class="section-heading reveal"><span class="eyebrow">Rental plans</span><h2>Choose your ride duration</h2><p>Pricing is being finalised. Message or call us for the latest rates, availability and rental terms.</p></div>
+          <div class="cards">
+            <article class="plan-card reveal"><h3>Weekly rental</h3><p>Flexible mobility for a shorter stay or a week of city travel.</p><div class="price-placeholder">Price to be confirmed<small>Ask us for current weekly pricing</small></div><ul class="simple-list"><li>Weekly rental enquiry</li><li>Availability confirmed directly</li><li>Terms shared before booking</li></ul><a class="button button-primary" href="https://wa.me/919030811105?text=Hi%20Swift%20EV%2C%20please%20share%20your%20weekly%20scooter%20rental%20price%20and%20availability." target="_blank" rel="noopener noreferrer">Ask about weekly</a></article>
+            <article class="plan-card featured reveal"><h3>Monthly rental</h3><p>A longer rental option for your daily Hyderabad commute.</p><div class="price-placeholder">Price to be confirmed<small>Ask us for current monthly pricing</small></div><ul class="simple-list"><li>Monthly rental enquiry</li><li>Availability confirmed directly</li><li>Terms shared before booking</li></ul><a class="button button-primary" href="https://wa.me/919030811105?text=Hi%20Swift%20EV%2C%20please%20share%20your%20monthly%20scooter%20rental%20price%20and%20availability." target="_blank" rel="noopener noreferrer">Ask about monthly</a></article>
+            <article class="plan-card reveal"><h3>Home charging</h3><p>Discuss home charging options to support your electric vehicle.</p><div class="price-placeholder">Get a tailored quote<small>Requirements and pricing depend on your setup</small></div><ul class="simple-list"><li>Tell us about your EV</li><li>Discuss your home setup</li><li>Get in touch for next steps</li></ul><a class="button button-light" href="https://wa.me/919030811105?text=Hi%20Swift%20EV%2C%20I%27m%20interested%20in%20home%20charging.%20Please%20get%20in%20touch." target="_blank" rel="noopener noreferrer">Ask about charging</a></article>
           </div>
         </div>
       </section>
 
-      <section id="testimonials" class="section">
+      <section class="section section-tint" id="how-it-works">
         <div class="container">
-          <div class="section-head reveal">
-            <span class="eyebrow">Rider stories</span>
-            <h2>Real riders. Real comfort.</h2>
-            <p>Feedback from Hyderabad riders who trusted Swift EV for smooth, affordable travel.</p>
-          </div>
-
-          <div class="testimonials-grid">
-            <article class="testimonial reveal">
-              <div class="stars">★★★★★</div>
-              <p>
-                “The weekly plan was perfect for my office commute. The scooter was clean, easy to ride, and
-                the pickup process was super smooth.”
-              </p>
-              <div class="rider">
-                <div class="avatar">A</div>
-                <div>
-                  <strong>Anirudh</strong>
-                  <span>IT professional</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="testimonial reveal">
-              <div class="stars">★★★★★</div>
-              <p>
-                “I rented one for a month while my bike was in service. The support was excellent and the cost was much
-                lower than my daily commute costs.”
-              </p>
-              <div class="rider">
-                <div class="avatar">S</div>
-                <div>
-                  <strong>Sneha</strong>
-                  <span>College student</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="testimonial reveal">
-              <div class="stars">★★★★★</div>
-              <p>
-                “Very convenient for my weekend city rides. Urban mobility feels easier and much more eco-friendly with
-                Swift EV.”
-              </p>
-              <div class="rider">
-                <div class="avatar">R</div>
-                <div>
-                  <strong>Rohit</strong>
-                  <span>Weekend traveler</span>
-                </div>
-              </div>
-            </article>
+          <div class="section-heading reveal"><span class="eyebrow">How it works</span><h2>Three simple steps to get moving</h2><p>Our team will guide you through availability and the details before you confirm.</p></div>
+          <div class="steps">
+            <article class="step reveal"><div class="step-number">01</div><h3>Contact our team</h3><p>Call or WhatsApp us with your preferred plan, dates and location in Hyderabad.</p></article>
+            <article class="step reveal"><div class="step-number">02</div><h3>Confirm the details</h3><p>We’ll discuss availability, pricing, required documents, deposit and rental terms before you decide.</p></article>
+            <article class="step reveal"><div class="step-number">03</div><h3>Arrange your ride</h3><p>Once details are agreed, we’ll coordinate the vehicle handover and explain how to get support.</p></article>
           </div>
         </div>
       </section>
 
-      <section id="faq" class="section">
-        <div class="container faq-grid">
-          <div class="reveal">
-            <div class="section-head" style="text-align:left; margin:0 0 24px; max-width:none;">
-              <span class="eyebrow">FAQ</span>
-              <h2>Questions riders ask most</h2>
-            </div>
-
-            <div class="faq-list">
-              <div class="faq-item active">
-                <button class="faq-question" type="button">
-                  <span>Do I need a driving license?</span>
-                  <span class="plus">+</span>
-                </button>
-                <div class="faq-answer">
-                  <p>Yes, a valid driving license is required for all scooter rentals. We also help guide you through the quick onboarding process.</p>
-                </div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-question" type="button">
-                  <span>Are helmets and accessories included?</span>
-                  <span class="plus">+</span>
-                </button>
-                <div class="faq-answer">
-                  <p>Yes. Every plan includes a helmet and basic safety accessories as part of the rental package.</p>
-                </div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-question" type="button">
-                  <span>Can I extend my rental?</span>
-                  <span class="plus">+</span>
-                </button>
-                <div class="faq-answer">
-                  <p>Absolutely. You can extend your plan depending on vehicle availability and the remaining rental period.</p>
-                </div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-question" type="button">
-                  <span>Do you offer support in Hyderabad?</span>
-                  <span class="plus">+</span>
-                </button>
-                <div class="faq-answer">
-                  <p>Yes. We provide local support across Hyderabad with easy pickup and handover points for your convenience.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="about-box reveal" id="about">
-            <h3>About Swift EV</h3>
-            <p>
-              Swift EV Mobility is built for people who want cheaper, cleaner, and smarter ways to commute in Hyderabad.
-              We make scooter rentals easy, safe, and affordable for both short rentals and long stays.
-            </p>
-            <ul class="check-list">
-              <li>Affordable weekly & monthly rental options</li>
-              <li>Well-maintained electric scooters</li>
-              <li>Safe and easy onboarding support</li>
-              <li>Built for city travel and daily convenience</li>
-            </ul>
+      <section class="section" id="faq">
+        <div class="container faq-layout">
+          <div class="faq-intro reveal"><span class="eyebrow">FAQs</span><h2>Good to know before you ride</h2><p>Have another question? Reach us directly and we’ll help clarify the details.</p><a class="button button-light" href="https://wa.me/919030811105?text=Hi%20Swift%20EV%2C%20I%20have%20a%20question%20about%20your%20services." target="_blank" rel="noopener noreferrer">Ask us on WhatsApp</a></div>
+          <div class="faq-list reveal">
+            <article class="faq-item active"><button class="faq-question" type="button" aria-expanded="true"><span>How can I book a scooter?</span><span aria-hidden="true">+</span></button><div class="faq-answer"><div><p>Message or call us with your preferred rental duration and dates. We’ll confirm availability and share the booking steps.</p></div></div></article>
+            <article class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>How much is the deposit and what documents are needed?</span><span aria-hidden="true">+</span></button><div class="faq-answer"><div><p>Deposit and document requirements will be explained when you enquire. Please confirm the applicable terms with our team before booking.</p></div></div></article>
+            <article class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Are rental prices available yet?</span><span aria-hidden="true">+</span></button><div class="faq-answer"><div><p>Weekly and monthly pricing is being finalised. Contact us for the latest quote and to check vehicle availability.</p></div></div></article>
+            <article class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Can I charge the scooter at home?</span><span aria-hidden="true">+</span></button><div class="faq-answer"><div><p>Charging arrangements can depend on the scooter model and your home setup. Ask our team for guidance, or enquire separately about our home charging service.</p></div></div></article>
+            <article class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Who handles maintenance during the rental?</span><span aria-hidden="true">+</span></button><div class="faq-answer"><div><p>Maintenance and support arrangements depend on the rental terms. We’ll explain them and provide a contact for assistance before you confirm.</p></div></div></article>
           </div>
         </div>
       </section>
 
-      <section class="section" id="contact">
+      <section class="section section-tint" id="contact">
         <div class="container">
-          <div class="cta-panel reveal">
-            <div>
-              <h3>Ready to ride electric in Hyderabad?</h3>
-              <p>Call, message, or book online for your weekly or monthly scooter rental.</p>
-            </div>
-            <div class="cta-row" style="margin-top:0;">
-              <a class="button primary" href="tel:+919999999999">Call Now</a>
-              <a class="button secondary" href="mailto:hello@swiftevmobility.com">Email Us</a>
+          <div class="contact-panel reveal">
+            <div><span class="eyebrow" style="color:#9ed6ff">Contact Swift EV</span><h2>Ready to make your next move electric?</h2><p>Talk to us about scooter rentals, home charging or a question about our services.</p><div class="contact-actions"><a class="button button-whatsapp" href="https://wa.me/919030811105?text=Hi%20Swift%20EV%20Mobility%20Solutions%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener noreferrer">Chat on WhatsApp ↗</a><a class="button button-light" href="tel:+919030811105">Call +91 90308 11105</a></div></div>
+            <div class="contact-details">
+              <div class="contact-row"><span class="contact-icon" aria-hidden="true">📞</span><div><strong>Phone</strong><a href="tel:+919030811105">9030811105</a></div></div>
+              <div class="contact-row"><span class="contact-icon" aria-hidden="true">📍</span><div><strong>Business address</strong><span>Sai Samrat Nagar, Plot No. 37,<br />Dhatu Nagar, Hyderabad – 500097</span></div></div>
+              <div class="contact-row"><span class="contact-icon" aria-hidden="true">🗺️</span><div><strong>Find us</strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Sai+Samrat+Nagar%2C+Plot+No.+37%2C+Dhatu+Nagar%2C+Hyderabad+500097" target="_blank" rel="noopener noreferrer">Open address in Google Maps ↗</a></div></div>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container footer-row">
-        <div>
-          <strong style="color:#fff;">Swift EV Mobility</strong>
-          <div>Hyderabad • Weekly & Monthly Rentals</div>
-        </div>
-
-        <div class="footer-links">
-          <a href="#plans">Plans</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="#faq">FAQ</a>
-          <a href="#about">About</a>
-        </div>
-      </div>
-    </footer>
-
+    <footer class="footer"><div class="container footer-inner"><p><strong>Swift EV Mobility Solutions</strong> · Hyderabad, Telangana</p><div class="footer-links"><a href="#about">About</a><a href="#services">Services</a><a href="#plans">Rental plans</a><a href="#contact">Contact</a></div><p>© <span id="year"></span> Swift EV Mobility Solutions</p></div></footer>
+    <a class="floating-whatsapp" href="https://wa.me/919030811105?text=Hi%20Swift%20EV%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener noreferrer" aria-label="Chat with Swift EV on WhatsApp">☏</a>
     <script>
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.18 }
-      );
-
-      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
-      document.querySelectorAll('.faq-question').forEach((button) => {
-        button.addEventListener('click', () => {
-          const item = button.parentElement;
-          const isOpen = item.classList.contains('active');
-
-          document.querySelectorAll('.faq-item').forEach((faq) => faq.classList.remove('active'));
-
-          if (!isOpen) {
-            item.classList.add('active');
-          }
-        });
+      const menuButton = document.querySelector('.menu-toggle');
+      const navigation = document.querySelector('#site-navigation');
+      menuButton.addEventListener('click', () => {
+        const isOpen = navigation.classList.toggle('open');
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+        menuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
       });
+      navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+        navigation.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Open navigation menu');
+      }));
+      document.querySelectorAll('.faq-question').forEach((button) => button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const isOpen = item.classList.toggle('active');
+        button.setAttribute('aria-expanded', String(isOpen));
+      }));
+      document.querySelector('#year').textContent = new Date().getFullYear();
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        }), { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+      } else {
+        document.querySelectorAll('.reveal').forEach((element) => element.classList.add('visible'));
+      }
     </script>
   </body>
 </html>
